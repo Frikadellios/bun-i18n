@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "bunx --bun astro dev --verbose",
     "start": "bun astro check --verbose && bunx bun astro dev --verbose",
-    "build": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide && bun astro check --verbose && bunx --bun astro build --verbose",
+    "build": "bunx @inlang/cli machine translate --project ./project.inlang && bun astro check --verbose && bunx --bun astro build --verbose",
     "preview": "bunx --bun astro preview",
-    "astro": "astro",
+    "astro": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide && bun run astro",
     "postinstall": "paraglide-js compile --project ./project.inlang --outdir ./src/paraglide",
     "translate:auto": "bunx @inlang/cli machine translate --project project.inlang"
   },
